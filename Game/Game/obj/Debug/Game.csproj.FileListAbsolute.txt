@@ -8,3 +8,13 @@ D:\סמסטר א\סמסטר ב\C#\מטלות\Game\Game\obj\Debug\Game.csproj.Gen
 D:\סמסטר א\סמסטר ב\C#\מטלות\Game\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
 D:\סמסטר א\סמסטר ב\C#\מטלות\Game\Game\obj\Debug\Game.exe
 D:\סמסטר א\סמסטר ב\C#\מטלות\Game\Game\obj\Debug\Game.pdb
+D:\סמסטר א\סמסטר ב\C#\Game\Game\bin\Debug\Game.exe.config
+D:\סמסטר א\סמסטר ב\C#\Game\Game\bin\Debug\Game.exe
+D:\סמסטר א\סמסטר ב\C#\Game\Game\bin\Debug\Game.pdb
+D:\סמסטר א\סמסטר ב\C#\Game\Game\obj\Debug\Game.csprojAssemblyReference.cache
+D:\סמסטר א\סמסטר ב\C#\Game\Game\obj\Debug\Game.Form1.resources
+D:\סמסטר א\סמסטר ב\C#\Game\Game\obj\Debug\Game.Properties.Resources.resources
+D:\סמסטר א\סמסטר ב\C#\Game\Game\obj\Debug\Game.csproj.GenerateResource.cache
+D:\סמסטר א\סמסטר ב\C#\Game\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+D:\סמסטר א\סמסטר ב\C#\Game\Game\obj\Debug\Game.exe
+D:\סמסטר א\סמסטר ב\C#\Game\Game\obj\Debug\Game.pdb
