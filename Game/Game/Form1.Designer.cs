@@ -201,7 +201,7 @@ namespace Game
             // picTree1
             // 
             this.picTree1.Image = ((System.Drawing.Image)(resources.GetObject("picTree1.Image")));
-            this.picTree1.Location = new System.Drawing.Point(128, 273);
+            this.picTree1.Location = new System.Drawing.Point(0, 328);
             this.picTree1.Name = "picTree1";
             this.picTree1.Size = new System.Drawing.Size(112, 107);
             this.picTree1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
