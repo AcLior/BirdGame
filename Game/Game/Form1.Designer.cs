@@ -38,11 +38,9 @@ namespace Game
             this.tmrMove2 = new System.Windows.Forms.Timer(this.components);
             this.tmrMove3 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.startGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.endGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.birdPlayer = new System.Windows.Forms.PictureBox();
             this.tmrMoveBird = new System.Windows.Forms.Timer(this.components);
-            this.lblScore = new System.Windows.Forms.Label();
             this.lblLimit = new System.Windows.Forms.Label();
             this.lblGameOver = new System.Windows.Forms.Label();
             this.lblYourScore = new System.Windows.Forms.Label();
@@ -53,6 +51,12 @@ namespace Game
             this.picShrub2 = new System.Windows.Forms.PictureBox();
             this.picShrub3 = new System.Windows.Forms.PictureBox();
             this.tmrPlant = new System.Windows.Forms.Timer(this.components);
+            this.lblScore = new System.Windows.Forms.Label();
+            this.BunnyPlayer = new System.Windows.Forms.PictureBox();
+            this.lblStartGame = new System.Windows.Forms.Label();
+            this.txtFinalScore = new System.Windows.Forms.TextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.lblScoreBoard = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rock1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rock2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rock3)).BeginInit();
@@ -64,6 +68,7 @@ namespace Game
             ((System.ComponentModel.ISupportInitialize)(this.picTree3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShrub2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShrub3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BunnyPlayer)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrMove1
@@ -75,7 +80,7 @@ namespace Game
             this.rock1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.rock1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.rock1.Image = ((System.Drawing.Image)(resources.GetObject("rock1.Image")));
-            this.rock1.Location = new System.Drawing.Point(744, 411);
+            this.rock1.Location = new System.Drawing.Point(742, 411);
             this.rock1.Name = "rock1";
             this.rock1.Size = new System.Drawing.Size(58, 40);
             this.rock1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -88,7 +93,7 @@ namespace Game
             this.rock2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.rock2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.rock2.Image = ((System.Drawing.Image)(resources.GetObject("rock2.Image")));
-            this.rock2.Location = new System.Drawing.Point(762, 422);
+            this.rock2.Location = new System.Drawing.Point(760, 422);
             this.rock2.Name = "rock2";
             this.rock2.Size = new System.Drawing.Size(40, 29);
             this.rock2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -101,7 +106,7 @@ namespace Game
             this.rock3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.rock3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.rock3.Image = ((System.Drawing.Image)(resources.GetObject("rock3.Image")));
-            this.rock3.Location = new System.Drawing.Point(762, 422);
+            this.rock3.Location = new System.Drawing.Point(760, 422);
             this.rock3.Name = "rock3";
             this.rock3.Size = new System.Drawing.Size(40, 29);
             this.rock3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -111,16 +116,15 @@ namespace Game
             // 
             // tmrMove2
             // 
-            this.tmrMove2.Tick += new System.EventHandler(this.tmrMove2_Tick);
+            this.tmrMove2.Tick += new System.EventHandler(this.tmrMove2_Tick_1);
             // 
             // tmrMove3
             // 
-            this.tmrMove3.Tick += new System.EventHandler(this.tmrMove3_Tick);
+            this.tmrMove3.Tick += new System.EventHandler(this.tmrMove3_Tick_1);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startGameToolStripMenuItem,
             this.endGameToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -128,15 +132,9 @@ namespace Game
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // startGameToolStripMenuItem
-            // 
-            this.startGameToolStripMenuItem.Name = "startGameToolStripMenuItem";
-            this.startGameToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.startGameToolStripMenuItem.Text = "Start Game";
-            this.startGameToolStripMenuItem.Click += new System.EventHandler(this.startGameToolStripMenuItem_Click);
-            // 
             // endGameToolStripMenuItem
             // 
+            this.endGameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.endGameToolStripMenuItem.Name = "endGameToolStripMenuItem";
             this.endGameToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.endGameToolStripMenuItem.Text = "End Game";
@@ -152,20 +150,13 @@ namespace Game
             this.birdPlayer.TabIndex = 7;
             this.birdPlayer.TabStop = false;
             this.birdPlayer.Visible = false;
+            this.birdPlayer.Click += new System.EventHandler(this.birdPlayer_Click);
+            this.birdPlayer.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.birdPlayer_MouseDoubleClick);
             // 
             // tmrMoveBird
             // 
             this.tmrMoveBird.Enabled = true;
             this.tmrMoveBird.Tick += new System.EventHandler(this.tmrMoveBird_Tick);
-            // 
-            // lblScore
-            // 
-            this.lblScore.AutoSize = true;
-            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore.Location = new System.Drawing.Point(725, 60);
-            this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(0, 31);
-            this.lblScore.TabIndex = 8;
             // 
             // lblLimit
             // 
@@ -269,16 +260,85 @@ namespace Game
             this.tmrPlant.Interval = 200;
             this.tmrPlant.Tick += new System.EventHandler(this.tmrPlant_Tick);
             // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.Location = new System.Drawing.Point(711, 59);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(0, 25);
+            this.lblScore.TabIndex = 18;
+            // 
+            // BunnyPlayer
+            // 
+            this.BunnyPlayer.Image = ((System.Drawing.Image)(resources.GetObject("BunnyPlayer.Image")));
+            this.BunnyPlayer.Location = new System.Drawing.Point(0, 399);
+            this.BunnyPlayer.Name = "BunnyPlayer";
+            this.BunnyPlayer.Size = new System.Drawing.Size(62, 52);
+            this.BunnyPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BunnyPlayer.TabIndex = 20;
+            this.BunnyPlayer.TabStop = false;
+            this.BunnyPlayer.Visible = false;
+            // 
+            // lblStartGame
+            // 
+            this.lblStartGame.AutoSize = true;
+            this.lblStartGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartGame.Location = new System.Drawing.Point(85, 6);
+            this.lblStartGame.Name = "lblStartGame";
+            this.lblStartGame.Size = new System.Drawing.Size(80, 17);
+            this.lblStartGame.TabIndex = 22;
+            this.lblStartGame.Text = "Start Game";
+            this.lblStartGame.Click += new System.EventHandler(this.lblStartGame_Click);
+            this.lblStartGame.MouseLeave += new System.EventHandler(this.lblStartGame_MouseLeave);
+            this.lblStartGame.MouseHover += new System.EventHandler(this.lblStartGame_MouseHover);
+            // 
+            // txtFinalScore
+            // 
+            this.txtFinalScore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtFinalScore.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFinalScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFinalScore.Location = new System.Drawing.Point(387, 220);
+            this.txtFinalScore.Name = "txtFinalScore";
+            this.txtFinalScore.Size = new System.Drawing.Size(100, 23);
+            this.txtFinalScore.TabIndex = 24;
+            this.txtFinalScore.Visible = false;
+            // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.SystemColors.Info;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(12, 59);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(61, 77);
+            this.listView1.TabIndex = 25;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // lblScoreBoard
+            // 
+            this.lblScoreBoard.AutoSize = true;
+            this.lblScoreBoard.Location = new System.Drawing.Point(12, 40);
+            this.lblScoreBoard.Name = "lblScoreBoard";
+            this.lblScoreBoard.Size = new System.Drawing.Size(65, 13);
+            this.lblScoreBoard.TabIndex = 26;
+            this.lblScoreBoard.Text = "Scoreboard:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblScoreBoard);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.txtFinalScore);
+            this.Controls.Add(this.lblStartGame);
+            this.Controls.Add(this.BunnyPlayer);
+            this.Controls.Add(this.lblScore);
             this.Controls.Add(this.lblYourScore);
             this.Controls.Add(this.lblGameOver);
             this.Controls.Add(this.lblLimit);
-            this.Controls.Add(this.lblScore);
             this.Controls.Add(this.birdPlayer);
             this.Controls.Add(this.rock3);
             this.Controls.Add(this.rock2);
@@ -290,6 +350,7 @@ namespace Game
             this.Controls.Add(this.picTree2);
             this.Controls.Add(this.picShrub3);
             this.Controls.Add(this.picTree3);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -307,6 +368,7 @@ namespace Game
             ((System.ComponentModel.ISupportInitialize)(this.picTree3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShrub2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShrub3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BunnyPlayer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,11 +383,9 @@ namespace Game
         private System.Windows.Forms.Timer tmrMove2;
         private System.Windows.Forms.Timer tmrMove3;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem startGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem endGameToolStripMenuItem;
         private System.Windows.Forms.PictureBox birdPlayer;
         private System.Windows.Forms.Timer tmrMoveBird;
-        private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label lblLimit;
         private System.Windows.Forms.Label lblGameOver;
         private System.Windows.Forms.Label lblYourScore;
@@ -336,6 +396,12 @@ namespace Game
         private System.Windows.Forms.PictureBox picShrub2;
         private System.Windows.Forms.PictureBox picShrub3;
         private System.Windows.Forms.Timer tmrPlant;
+        private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.PictureBox BunnyPlayer;
+        private System.Windows.Forms.Label lblStartGame;
+        private System.Windows.Forms.TextBox txtFinalScore;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label lblScoreBoard;
     }
 }
 

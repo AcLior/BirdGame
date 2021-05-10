@@ -5,6 +5,14 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{92DF6064-B6F4-4A48-BF5C-A3CA984058B5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8F87B129-0345-4939-940F-81D94E43B893}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pictures", "pictures", "{C5FACE3B-7230-4EF1-96E8-5F9F3F531DB3}"
+	ProjectSection(SolutionItems) = preProject
+		Game\pictures\Bird.png = Game\pictures\Bird.png
+		Game\pictures\Bunnny.png = Game\pictures\Bunnny.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +26,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C5FACE3B-7230-4EF1-96E8-5F9F3F531DB3} = {8F87B129-0345-4939-940F-81D94E43B893}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4F2B422A-659D-4993-95B4-222BA37D1C76}
